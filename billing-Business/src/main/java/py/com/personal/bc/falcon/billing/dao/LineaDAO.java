@@ -12,35 +12,37 @@ import py.com.personal.bc.voltdb.utils.mapper.views.DefaultView;
 
 public class LineaDAO extends TransactionalDAO<Linea> {
 
-	 public Linea load(Linea linea) throws Exception {
-	        
-		 	MapConfig config = new MapConfig(Linea.class, DefaultView.class, true);
-	       
-	        return singlePartitionedLoad(linea, config, linea.getLinea(), null);
-	        
-	    }
-	
-	 public List<Linea> getListLineaByPlan (PlanPorLinea planEspecifico) throws Exception{
-			
-			List<Linea> lineas = null;
-			Linea linea = new Linea();
-			linea.setPlanes(planEspecifico);
-			linea.setLinea(planEspecifico.getLinea());
-			
-			LoadSettings settings = new LoadSettings();
-			settings.setQueryStatement("GetLineasPorPlanEspecifico");
-			settings.setColumns(Linea.Columnas.LINEA);
-			settings.setColumns(Relaciones.PLAN_LINEA);
+	public Linea load(Linea linea) throws Exception {
 
-			MapConfig config = new MapConfig(Linea.class,DefaultView.class,true);
-				
-			try {
-				lineas = this.singlePartitionedLoadList(linea, config, linea.getLinea(), settings);
-			} catch (Exception e) {
-	    	   e.printStackTrace();
-			   throw new Exception(e.getMessage());
-			}
-			
-			return lineas;
+		MapConfig config = new MapConfig(Linea.class, DefaultView.class, true);
+
+		return singlePartitionedLoad(linea, config, linea.getLinea(), null);
+
+	}
+
+
+	// obtener en todas la particiones lineas de un plan especifico.
+	public List<Linea> getListLineaByPlan (PlanPorLinea planEspecifico) throws Exception{
+
+		List<Linea> lineas = null;
+		Linea linea = new Linea();
+		linea.setPlanes(planEspecifico);
+		linea.setLinea(planEspecifico.getLinea());
+
+		LoadSettings settings = new LoadSettings();
+		settings.setQueryStatement("GetLineasPorPlanEspecifico");
+		settings.setColumns(Linea.Columnas.LINEA);
+		settings.setColumns(Relaciones.PLAN_LINEA);
+
+		MapConfig config = new MapConfig(Linea.class,DefaultView.class,true);
+
+		try {
+			lineas = this.singlePartitionedLoadList(linea, config, linea.getLinea(), settings);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception(e.getMessage());
 		}
+
+		return lineas;
+	}
 }

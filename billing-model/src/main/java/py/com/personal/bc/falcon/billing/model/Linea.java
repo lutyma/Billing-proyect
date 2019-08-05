@@ -39,7 +39,7 @@ public class Linea {
 	    @Relation(value = Relaciones.PLAN_LINEA, joinColumns = Columnas.LINEA)
 	    private PlanPorLinea planes;
 	    
-	//    @IncludeWithView(value = SaldoView.class, lock = true)
+	//  @IncludeWithView(value = SaldoView.class, lock = true)
 	    @IncludeWithView(value = DefaultView.class, lock = true)
 	    @Relation(value = Relaciones.BOLSAS, joinColumns = Columnas.LINEA)
 	    private List<Bolsa> bolsas;

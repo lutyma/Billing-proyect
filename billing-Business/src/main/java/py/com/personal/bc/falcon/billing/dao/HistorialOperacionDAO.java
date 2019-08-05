@@ -7,7 +7,7 @@ import py.com.personal.bc.falcon.billing.model.Bolsa;
 import py.com.personal.bc.falcon.billing.model.HistorialDeOperacion;
 import py.com.personal.bc.voltdb.utils.mapper.MapConfig;
 
-public class HistorialOperacion extends TransactionalDAO<HistorialDeOperacion> {
+public class HistorialOperacionDAO extends TransactionalDAO<HistorialDeOperacion> {
 
 public List<HistorialDeOperacion> getHistorialByLinea(String linea) throws Exception{
 		
