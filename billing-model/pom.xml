@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>maven_proyect</groupId>
+		<artifactId>billing</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>maven_model</groupId>
+	<artifactId>billing-model</artifactId>
+	<name>billing-model</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.is-common-utils>1.5.1</version.is-common-utils>
+		<version.is-voltdb-utils>5.2.1</version.is-voltdb-utils>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency> 
+		  
+       <dependency>
+            <groupId>py.com.personal.bc</groupId>
+            <artifactId>is-voltdb-utils</artifactId>
+            <version>${version.is-voltdb-utils}</version>
+        </dependency> 
+        
+        <dependency>
+            <groupId>py.com.personal.bc</groupId>
+            <artifactId>is-common-utils</artifactId>
+            <version>${version.is-common-utils}</version>
+        </dependency>
+ 
+	</dependencies>
+</project>
