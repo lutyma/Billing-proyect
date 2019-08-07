@@ -19,4 +19,9 @@ public class PlanPorLineaBusiness {
 
 	}
 
+	public void insert(PlanPorLinea planNuevo) throws Exception {
+
+		dao.insert(planNuevo);
+} 
+	
 }

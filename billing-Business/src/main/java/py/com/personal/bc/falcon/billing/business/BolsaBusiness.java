@@ -11,4 +11,8 @@ public class BolsaBusiness {
 	        return dao.load(bolsa);
 	    }
 	 
+	 public void insert(Bolsa bolsa) throws Exception {
+
+			dao.insert(bolsa);
+	} 
 }

@@ -14,6 +14,6 @@ public class BolsaDAO extends TransactionalDAO<Bolsa>{
 
 		return singlePartitionedLoad(bolsa, mapConfig, bolsa.getLinea(), null );
 	}
-
+	
 
 }
