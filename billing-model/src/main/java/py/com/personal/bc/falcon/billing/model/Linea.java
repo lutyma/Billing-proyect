@@ -25,7 +25,7 @@ public class Linea {
 	        public static final String PLAN_LINEA = "PlanPorLinea";
 	        public static final String BOLSAS = "Bolsas";
 	    }
-
+        
 	    @Column(value = Columnas.LINEA, order = 1)
 	    private String linea;
 	    
