@@ -9,5 +9,6 @@
     <module>billing-model</module>
     <module>billing-Business</module>
     <module>billing-service</module>
+    <module>billing-test</module>
   </modules>
 </project>
